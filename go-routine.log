@@ -1,0 +1,218 @@
+7月 03 13:56:38 ai2-master dockerd[32157]: time="2023-07-03T13:56:38.691549413+08:00" level=info msg="Processing signal 'quit'"
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 226 [running]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/pkg/signal.DumpStacks(0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:83 +0x9d
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/pkg/signal.Trap.func1.1(0x5597239ed900, 0xc0001729a0, 0xc000872850, 0xc00098bd20, 0x559723a24c80, 0xc000a00020)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:61 +0x245
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/pkg/signal.Trap.func1
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:43 +0xdf
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 1 [syscall, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: syscall.Syscall6(0x101, 0xffffffffffffff9c, 0xc000e80e00, 0x80000, 0x0, 0x0, 0x0, 0xc000e80d80, 0x3000000000, 0x2f64ffffffffffff)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/syscall/asm_linux_amd64.s:44 +0x5
+7月 03 13:56:38 ai2-master dockerd[32157]: syscall.openat(0xffffffffffffff9c, 0xc000e80d80, 0x73, 0x80000, 0xc000000000, 0x73, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/syscall/zsyscall_linux_amd64.go:68 +0xbd
+7月 03 13:56:38 ai2-master dockerd[32157]: syscall.Open(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/syscall/syscall_linux.go:138
+7月 03 13:56:38 ai2-master dockerd[32157]: os.openFileNolog(0xc000e80d80, 0x73, 0x0, 0xc000000000, 0x73, 0xc000e80d80, 0x73)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/os/file_unix.go:196 +0x91
+7月 03 13:56:38 ai2-master dockerd[32157]: os.OpenFile(0xc000e80d80, 0x73, 0x0, 0xc000000000, 0x2, 0x2, 0xc000e80d80)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/os/file.go:300 +0x65
+7月 03 13:56:38 ai2-master dockerd[32157]: os.Open(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/os/file.go:280
+7月 03 13:56:38 ai2-master dockerd[32157]: io/ioutil.ReadFile(0xc000e80d80, 0x73, 0x0, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/io/ioutil/ioutil.go:53 +0x80
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/layer.(*fileMetadataStore).GetInitID(0xc000561c20, 0xc000b5009b, 0x40, 0xc000e74440, 0x40, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/layer/filestore.go:275 +0x89
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/layer.(*layerStore).loadMount(0xc000580a80, 0xc000b5009b, 0x40, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/layer/layer_store.go:209 +0x15d
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/layer.newStoreFromGraphDriver(0xc000056810, 0x23, 0x559723a86e40, 0xc000a98480, 0x5597227b1f1d, 0x5, 0x23, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/layer/layer_store.go:122 +0x363
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/layer.NewStoreFromOptions(0xc000993fb0, 0xc, 0xc000544440, 0x1d, 0x0, 0x0, 0x0, 0x0, 0x0, 0xc000a2e0c0, ...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/layer/layer_store.go:75 +0x358
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/daemon.NewDaemon(0x559723a4a580, 0xc000125540, 0xc00098e000, 0xc000990c00, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/daemon.go:937 +0x17fd
+7月 03 13:56:38 ai2-master dockerd[32157]: main.(*DaemonCli).start(0xc00093def0, 0xc0003a48a0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon.go:199 +0x73e
+7月 03 13:56:38 ai2-master dockerd[32157]: main.runDaemon(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker_unix.go:13
+7月 03 13:56:38 ai2-master dockerd[32157]: main.newDaemonCommand.func1(0xc0001c8c80, 0x559724c282e8, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker.go:34 +0x7c
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).execute(0xc0001c8c80, 0xc00004e1d0, 0x0, 0x0, 0xc0001c8c80, 0xc00004e1d0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:762 +0x462
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).ExecuteC(0xc0001c8c80, 0x0, 0x0, 0x10)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:852 +0x2ec
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).Execute(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:800
+7月 03 13:56:38 ai2-master dockerd[32157]: main.main()
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker.go:97 +0x191
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 6 [syscall]:
+7月 03 13:56:38 ai2-master dockerd[32157]: os/signal.signal_recv(0x559723a24c80)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/runtime/sigqueue.go:147 +0x9e
+7月 03 13:56:38 ai2-master dockerd[32157]: os/signal.loop()
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/os/signal/signal_unix.go:23 +0x24
+7月 03 13:56:38 ai2-master dockerd[32157]: created by os/signal.init.0
+7月 03 13:56:38 ai2-master systemd[1]: docker.service: main process exited, code=exited, status=131/n/a
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/os/signal/signal_unix.go:29 +0x43
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 126 [select]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/go.opencensus.io/stats/view.(*worker).start(0xc000452a80)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/go.opencensus.io/stats/view/worker.go:144 +0xdf
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/go.opencensus.io/stats/view.init.0
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/go.opencensus.io/stats/view/worker.go:29 +0x59
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 41 [IO wait]:
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.runtime_pollWait(0x7f65c639abc8, 0x72, 0xffffffffffffffff)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/runtime/netpoll.go:184 +0x57
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).wait(0xc00019c098, 0x72, 0x8000, 0x8000, 0xffffffffffffffff)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:87 +0x47
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).waitRead(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:92
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*FD).Read(0xc00019c080, 0xc0005e4000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_unix.go:169 +0x1d1
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*netFD).Read(0xc00019c080, 0xc0005e4000, 0x8000, 0x8000, 0x0, 0x800000601, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/fd_unix.go:202 +0x51
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*conn).Read(0xc00022a048, 0xc0005e4000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/net.go:184 +0x6a
+7月 03 13:56:38 ai2-master dockerd[32157]: bufio.(*Reader).Read(0xc00052a2a0, 0xc00045a118, 0x9, 0x9, 0xc00010bdf8, 0x559720e6050e, 0xc000448660)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/bufio/bufio.go:226 +0x26c
+7月 03 13:56:38 ai2-master dockerd[32157]: io.ReadAtLeast(0x5597239eab20, 0xc00052a2a0, 0xc00045a118, 0x9, 0x9, 0x9, 0x559720eb55d0, 0xc000448660, 0xc00010be30)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/io/io.go:310 +0x89
+7月 03 13:56:38 ai2-master dockerd[32157]: io.ReadFull(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/io/io.go:329
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/golang.org/x/net/http2.readFrameHeader(0xc00045a118, 0x9, 0x9, 0x5597239eab20, 0xc00052a2a0, 0x0, 0xc000000000, 0x100559720e6813a, 0xc00023c470)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:237 +0x89
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc00045a0e0, 0xc000544340, 0xc000544340, 0x0, 0x0)
+7月 03 13:56:38 ai2-master systemd[1]: Failed to start Docker Application Container Engine.
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:492 +0xa3
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*http2Client).reader(0xc00045c000)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:1249 +0x198
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:289 +0xd77
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 154 [chan receive]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/pkg/signal.Trap.func1(0xc0003a50e0, 0x5597239ed900, 0xc0001729a0, 0xc00098bd20)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:38 +0x5d
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/pkg/signal.Trap
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:36 +0x11d
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 163 [chan receive, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/daemon.(*Daemon).setupDumpStackTrap.func1(0xc000126420, 0x5597227c411a, 0xf)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/debugtrap_unix.go:18 +0x43
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/daemon.(*Daemon).setupDumpStackTrap
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/debugtrap_unix.go:17 +0xc1
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 159 [IO wait, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.runtime_pollWait(0x7f65c639ad68, 0x72, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/runtime/netpoll.go:184 +0x57
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).wait(0xc000a98018, 0x72, 0x0, 0x0, 0x5597227b5200)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:87 +0x47
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).waitRead(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:92
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*FD).Accept(0xc000a98000, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_unix.go:384 +0x1fa
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*netFD).accept(0xc000a98000, 0xc000a6c000, 0x7f65c63f66d0, 0x0)
+7月 03 13:56:38 ai2-master systemd[1]: Unit docker.service entered failed state.
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/fd_unix.go:238 +0x44
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*UnixListener).accept(0xc000a2e300, 0xc00010ddd8, 0x559720e6813a, 0x30)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/unixsock_posix.go:162 +0x34
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*UnixListener).Accept(0xc000a2e300, 0x5597237dd020, 0xc00085c210, 0x5597235d0640, 0x559724b6b180)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/unixsock.go:260 +0x49
+7月 03 13:56:38 ai2-master dockerd[32157]: net/http.(*Server).Serve(0xc00045a000, 0x559723a3b180, 0xc000a2e300, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/http/server.go:2925 +0x282
+7月 03 13:56:38 ai2-master dockerd[32157]: net/http.Serve(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/http/server.go:2497
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/daemon.(*Daemon).listenMetricsSock.func1(0x559723a3b180, 0xc000a2e300, 0xc000a86080)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/metrics_unix.go:31 +0x6e
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/daemon.(*Daemon).listenMetricsSock
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/metrics_unix.go:30 +0x1af
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 160 [select, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*ccBalancerWrapper).watcher(0xc000a86340)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/balancer_conn_wrappers.go:115 +0x12e
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc.newCCBalancerWrapper
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/balancer_conn_wrappers.go:106 +0x16b
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 161 [chan receive, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).resetTransport(0xc000168280)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:1077 +0x6ae
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).connect
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:743 +0x122
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 180 [IO wait]:
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.runtime_pollWait(0x7f65c639ac98, 0x72, 0xffffffffffffffff)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/runtime/netpoll.go:184 +0x57
+7月 03 13:56:38 ai2-master systemd[1]: docker.service failed.
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).wait(0xc000a98218, 0x72, 0x8000, 0x8000, 0xffffffffffffffff)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:87 +0x47
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*pollDesc).waitRead(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_poll_runtime.go:92
+7月 03 13:56:38 ai2-master dockerd[32157]: internal/poll.(*FD).Read(0xc000a98200, 0xc0005b0000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/internal/poll/fd_unix.go:169 +0x1d1
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*netFD).Read(0xc000a98200, 0xc0005b0000, 0x8000, 0x8000, 0x0, 0x800000601, 0x7f6500000000)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/fd_unix.go:202 +0x51
+7月 03 13:56:38 ai2-master dockerd[32157]: net.(*conn).Read(0xc000584078, 0xc0005b0000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/net/net.go:184 +0x6a
+7月 03 13:56:38 ai2-master dockerd[32157]: bufio.(*Reader).Read(0xc000580180, 0xc00057e038, 0x9, 0x9, 0xc000e9fdf8, 0x559720e6050e, 0xc00013e5a0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/bufio/bufio.go:226 +0x26c
+7月 03 13:56:38 ai2-master dockerd[32157]: io.ReadAtLeast(0x5597239eab20, 0xc000580180, 0xc00057e038, 0x9, 0x9, 0x9, 0x559720eb55d0, 0xc00013e5a0, 0xc000e9fe30)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/io/io.go:310 +0x89
+7月 03 13:56:38 ai2-master dockerd[32157]: io.ReadFull(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /usr/local/go/src/io/io.go:329
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/golang.org/x/net/http2.readFrameHeader(0xc00057e038, 0x9, 0x9, 0x5597239eab20, 0xc000580180, 0x0, 0xc000000000, 0x100559720e6813a, 0xc000430470)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:237 +0x89
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc00057e000, 0xc000544320, 0xc000544320, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:492 +0xa3
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*http2Client).reader(0xc000550540)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:1249 +0x198
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:289 +0xd77
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 181 [select]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*controlBuffer).get(0xc000430460, 0x1, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:395 +0x124
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*loopyWriter).run(0xc0005802a0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:513 +0x1e5
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client.func3(0xc000550540)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:333 +0x7d
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:331 +0xf14
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 194 [select, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*ccBalancerWrapper).watcher(0xc000a86780)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/balancer_conn_wrappers.go:115 +0x12e
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc.newCCBalancerWrapper
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/balancer_conn_wrappers.go:106 +0x16b
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 195 [chan receive, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).resetTransport(0xc000168a00)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:1077 +0x6ae
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).connect
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:743 +0x122
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 42 [select]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*controlBuffer).get(0xc00023c460, 0x1, 0x0, 0x0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:395 +0x124
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*loopyWriter).run(0xc00052a3c0, 0x0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:513 +0x1e5
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client.func3(0xc00045c000)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:333 +0x7d
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.newHTTP2Client
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/http2_client.go:331 +0xf14
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 182 [select, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/libcontainerd/remote.(*client).processEventStream(0xc0005803c0, 0x559723a4a580, 0xc000125540, 0x5597227bf82c, 0xc)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote/client.go:700 +0x2ab
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/libcontainerd/remote.NewClient
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote/client.go:67 +0x268
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 196 [select, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream.func5(0xc000907c00, 0xc0005865a0, 0x559723a4a640, 0xc000a2f530)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:319 +0xd9
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:318 +0x9a7
+7月 03 13:56:38 ai2-master dockerd[32157]: goroutine 197 [select, 121 minutes]:
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*Stream).waitOnHeader(0xc000868b00, 0xc00052a480, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/transport.go:312 +0xce
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport.(*Stream).RecvCompress(...)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/internal/transport/transport.go:331
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*csAttempt).recvMsg(0xc000876300, 0x559723883820, 0xc000a9cc00, 0x0, 0x4, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:871 +0x755
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*clientStream).RecvMsg.func1(0xc000876300, 0x203000, 0x203000)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:736 +0x48
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*clientStream).withRetry(0xc0005865a0, 0xc000605e48, 0xc000605e18, 0x0, 0x48)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:594 +0x9e
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/google.golang.org/grpc.(*clientStream).RecvMsg(0xc0005865a0, 0x559723883820, 0xc000a9cc00, 0x559720e89c6c, 0xc00052a3c0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:735 +0x105
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1.(*eventsSubscribeClient).Recv(0xc0005d8cc0, 0x0, 0xc0004483c0, 0x0)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1/events.pb.go:351 +0x64
+7月 03 13:56:38 ai2-master dockerd[32157]: github.com/docker/docker/vendor/github.com/containerd/containerd.(*eventRemote).Subscribe.func1(0xc000a9cae0, 0x559723a68f60, 0xc0005d8cc0, 0xc000a7aba0, 0x559723a4a580, 0xc000125540)
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/containerd/containerd/events.go:99 +0x8f
+7月 03 13:56:38 ai2-master dockerd[32157]: created by github.com/docker/docker/vendor/github.com/containerd/containerd.(*eventRemote).Subscribe
+7月 03 13:56:38 ai2-master dockerd[32157]: /root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/containerd/containerd/events.go:95 +0x1c6
+7月 03 13:56:38 ai2-master dockerd[32157]: time="2023-07-03T13:56:38.693635385+08:00" level=info msg="Forcing docker daemon shutdown without cleanup on SIGQUIT"
